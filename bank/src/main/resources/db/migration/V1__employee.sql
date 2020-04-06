@@ -1,0 +1,1 @@
+create table transfers (id serial primary key, tr_src integer, tr_dest integer, amount integer, result varchar(200));

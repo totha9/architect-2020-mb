@@ -1,0 +1,24 @@
+### List accounts
+
+GET http://localhost:8080/bank/api/accounts
+Accept: application/json
+
+### List transfers
+
+GET http://localhost:8080/bank/api/transfers
+Accept: application/json
+
+### Create transfer
+
+POST http://localhost:8080/bank/api/transfers
+Accept: application/json
+Content-Type: application/json
+
+{
+ "src": 1,
+ "dest": 2,
+  "amount": 1500
+}
+
+###
+
