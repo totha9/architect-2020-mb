@@ -13,6 +13,8 @@ public class TransferBean {
 
     @Inject
     private TransferRepository transferRepository;
+    @Inject
+    private AccountBean accountBean;
 
     @Transactional
     public Transfer createTransfer(CreateTransferCommand command) {
@@ -22,7 +24,12 @@ public class TransferBean {
         transfer.setAmount(command.getAmount());
         var created = transferRepository.save(transfer);
 
-       // TODO
+        try {
+            accountBean.credit(command.getSrc(), -command.getAmount());
+            accountBean.credit(command.getDest(), command.getAmount());
+        } catch (IllegalCreditException e) {
+            e.printStackTrace();
+        }
 
         created.setResult("ok");
         return created;
