@@ -1,0 +1,24 @@
+### List employees
+
+GET http://localhost:8080/employees/api/employee
+Accept: application/json
+
+### Create employee
+
+POST http://localhost:8080/employees/api/employee
+Accept: application/json
+Content-Type: application/json
+
+{
+  "employeeName": {
+    "forename": "XXX",
+    "surename": "YYY"
+  },
+  "motherName": {
+    "forename": "888",
+    "surename": "999"
+  }
+}
+
+###
+

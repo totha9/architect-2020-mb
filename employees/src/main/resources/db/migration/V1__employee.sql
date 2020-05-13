@@ -1,0 +1,3 @@
+create table employee (id serial primary key, employee_forename varchar(128), employee_surename varchar(128), mother_forename varchar(128), mother_surename varchar(128));
+insert into employee(employee_forename, employee_surename, mother_forename, mother_surename) values('AAA', 'BBB', '111', '222');
+insert into employee(employee_forename, employee_surename, mother_forename, mother_surename) values('CCC', 'DDD', '333', '444');
